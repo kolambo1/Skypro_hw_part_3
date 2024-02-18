@@ -1,14 +1,7 @@
-# lesson_3_task_2.py
-from smartphone import Smartphone # Импортируем класс Smartphone из файла smartphone.py
+# lesson_3_task_1.py
+from user import User # Импортируем класс User из файла user.py
 
-catalog = [] # Создаем пустой список
-# Добавляем пять разных экземпляров класса Smartphone в список
-catalog.append(Smartphone("Samsung", "Galaxy S24U", "+79123456789"))
-catalog.append(Smartphone("Apple", "iPhone 15 5PRO MAX", "+79234567890"))
-catalog.append(Smartphone("Huawei", "P60", "+79345678901"))
-catalog.append(Smartphone("Xiaomi", "Mi 14 Ultra", "+79456789012"))
-catalog.append(Smartphone("OnePlus", "12", "+79567890123"))
-
-# Печатаем весь каталог в формате <марка> - <модель>. <номер телефона>
-for phone in catalog:
-    print(phone.brand + " - " + phone.model + ". " + phone.number)
+my_user = User("Иван", "Иванов") # Создаем новый экземпляр User и сохраняем его в переменную my_user
+my_user.print_first_name() # Вызываем метод, печатающий имя
+my_user.print_last_name() # Вызываем метод, печатающий фамилию
+my_user.print_full_name() # Вызываем метод, печатающий имя и фамилию
