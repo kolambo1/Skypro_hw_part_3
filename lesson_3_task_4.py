@@ -1,20 +1,8 @@
-# lesson_3_task_4.py
 import turtle # Импортируем модуль turtle
 
 my_turtle = turtle.Turtle()
 my_turtle.speed(0)
 my_turtle.screen.setup(1200, 800)
-
-# Нарисовать квадрат
-def draw_rect(t):
-    for x in range(0, 4):
-        t.right(90)
-        t.forward(100)
-
-# Рисует квадраты в цикле
-for x in range(0, 360):
-    draw_rect(my_turtle)
-    my_turtle.right(1)
 
 # Нарисовать голову животного
 def draw_head(t):
@@ -117,6 +105,30 @@ def draw_body(t):
     t.forward(400) # Идем вперед на 400
     t.end_fill() # Заканчиваем заливку
 
+# Нарисовать ноги животного
+def draw_legs(t):
+    t.penup()
+    t.goto(-150, -150) # Перемещаемся к началу первой ноги
+    t.pendown()
+    t.fillcolor("brown") # Задаем цвет заливки
+    t.begin_fill() # Начинаем заливку
+    for _ in range(2): # Рисуем две ноги
+        t.forward(50) # Идем вперед на 50
+        t.right(90) # Поворачиваемся на 90 градусов вправо
+        t.forward(200) # Идем вперед на 200
+        t.right(90) # Поворачиваемся на 90 градусов вправо
+    t.end_fill() # Заканчиваем заливку
+    t.penup()
+    t.goto(-50, -150) # Перемещаемся к началу второй ноги
+    t.pendown()
+    t.begin_fill() # Начинаем заливку
+    for _ in range(2): # Рисуем две ноги
+        t.forward(50) # Идем вперед на 50
+        t.right(90) # Поворачиваемся на 90 градусов вправо
+        t.forward(200) # Идем вперед на 200
+        t.right(90) # Поворачиваемся на 90 градусов вправо
+    t.end_fill() # Заканчиваем заливку
+
 # Нарисовать хвост животного
 def draw_tail(t):
     t.penup()
@@ -142,3 +154,6 @@ draw_nose(my_turtle)
 draw_ears(my_turtle)
 draw_body(my_turtle)
 draw_legs(my_turtle)
+draw_tail(my_turtle)
+
+turtle.done()
